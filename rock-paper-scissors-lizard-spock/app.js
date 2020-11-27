@@ -49,12 +49,12 @@ const getResults = (userChoice, computerChoice) => {
       splitResult[i][0].toLowerCase() === userChoice &&
       splitResult[i][2].toLowerCase() === computerChoice
     )
-      return [splitResult[i].join(' '), 'User Wins'];
+      return [results[i], 'User Wins'];
     if (
       splitResult[i][0].toLowerCase() === computerChoice &&
       splitResult[i][2].toLowerCase() === userChoice
     )
-      return [splitResult[i].join(' '), 'Computer Wins'];
+      return [results[i], 'Computer Wins'];
   }
 };
 

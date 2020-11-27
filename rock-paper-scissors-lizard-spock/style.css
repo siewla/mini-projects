@@ -57,6 +57,7 @@ body {
   background-color: white;
   color: rgb(109, 186, 187);
   border: 1px solid wheat;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .choices-container > button:hover {
