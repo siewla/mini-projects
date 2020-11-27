@@ -12,7 +12,18 @@
     <div class="display-results-container">
       <img id="logo" src="./images/logo.png" alt="logo" />
       <div class="results-container">
-        <h1>Results</h1>
+        <div class="results-header">
+          <h1>Results</h1>
+          <button id="reset-button">Reset</button>
+        </div>
+        <div class="score-board">
+          <div id="user-label" class="badge">user</div>
+          <div id="comp-label" class="badge">comp</div>
+          <div class="score">
+            <span id="user-score">0</span>:<span id="comp-score">0</span>
+          </div>
+        </div>
+        <hr />
         <div class="results"></div>
       </div>
     </div>

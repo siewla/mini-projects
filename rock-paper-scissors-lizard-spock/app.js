@@ -15,6 +15,9 @@ function ready(callbackFunc) {
   }
 }
 
+let userScore = 0;
+let compScore = 0;
+
 const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 
 const results = [
@@ -48,14 +51,37 @@ const getResults = (userChoice, computerChoice) => {
     if (
       splitResult[i][0].toLowerCase() === userChoice &&
       splitResult[i][2].toLowerCase() === computerChoice
-    )
+    ) {
+      updateUserScore();
       return [results[i], 'User Wins'];
+    }
+
     if (
       splitResult[i][0].toLowerCase() === computerChoice &&
       splitResult[i][2].toLowerCase() === userChoice
-    )
+    ) {
+      updateCompScore();
       return [results[i], 'Computer Wins'];
+    }
   }
+};
+
+const updateUserScore = () => {
+  userScore++;
+  document.getElementById('user-score').innerHTML = userScore;
+};
+
+const updateCompScore = () => {
+  compScore++;
+  document.getElementById('comp-score').innerHTML = compScore;
+};
+
+const resetGame = () => {
+  userScore = 0;
+  compScore = 0;
+  document.getElementById('user-score').innerHTML = userScore;
+  document.getElementById('comp-score').innerHTML = compScore;
+  resultsDiv.innerHTML = '';
 };
 
 // console.log(getResults(getRandomChoice(choices), getRandomChoice(choices)));
@@ -66,7 +92,7 @@ const mainGame = () => {
 
   choicesDOM.forEach((choice) =>
     choice.addEventListener('click', (event) => {
-      document.querySelector('.results-container').style.display = 'block';
+      // document.querySelector('.results-container').style.display = 'block';
       resultsDiv.innerHTML = '';
       const userMove = event.target.id;
       const computerMove = getRandomChoice(choices);
@@ -91,6 +117,10 @@ const mainGame = () => {
       );
     }),
   );
+
+  document.querySelector('#reset-button').addEventListener('click', () => {
+    resetGame();
+  });
 };
 
 ready(function () {
