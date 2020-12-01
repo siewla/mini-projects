@@ -82,6 +82,7 @@ const unlockedTools = () => {
 const buyTool = (tool, action) => {
   if (action === 'Y') {
     fund -= tools[tool].cost;
+    updateFund();
     tools[tool].owned = true;
     const divUnlock = document.getElementById('bought-' + tool);
     divUnlock.classList.add('remove-lock');
