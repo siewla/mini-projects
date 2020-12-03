@@ -80,7 +80,7 @@ const unlockedTools = () => {
 };
 
 const buyTool = (tool, action) => {
-  if (action === 'Y') {
+  if (action.toUpperCase() === 'Y') {
     fund -= tools[tool].cost;
     updateFund();
     tools[tool].owned = true;
@@ -89,8 +89,8 @@ const buyTool = (tool, action) => {
     alert(
       `You just purchased ${tools[tool].name}, it can generate $ ${tools[tool].earning} per day.`,
     );
-  } else if (action === 'N') {
-    alert('Please click to buy againif you change your mind.');
+  } else if (action.toUpperCase() === 'N') {
+    alert('Please click to buy again if you change your mind.');
   } else {
     alert('Invalid entry');
   }
