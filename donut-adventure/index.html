@@ -4,18 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donut's Adventure</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Dougie and Pizza Rat</h1>
-    <div class="main-content">
+    <h1 class="text-center">Dougie and Pizza Rat</h1>
+    <div class="main-content d-flex justify-content-around">
       <div class="dougie-container">
-        <button id="talk-sass">Talk Sass</button>
-        <button id="dougie-fight">Fight</button>
+        <div class="dougie-health"><span id="dougie-health">100</span>%</div>
+        <div class="hero-image-container">
+          <img
+            class="rounded hero-image"
+            src="https://thumbs.gfycat.com/ExhaustedWateryCougar-size_restricted.gif"
+          />
+        </div>
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-primary" id="talk-sass">Talk Sass</button>
+          <button class="btn btn-warning" id="dougie-fight">Fight</button>
+        </div>
       </div>
       <div class="pizzarat-container">
-        <button id="talk-smack">Talk Smack</button>
-        <button id="pizzarat-fight">Fight</button>
+        <div class="pizzarat-health">
+          <span id="pizzarat-health">100</span>%
+        </div>
+        <div class="hero-image-container">
+          <img
+            class="rounded hero-image"
+            src="https://media1.giphy.com/media/26DN2hUeMwRd2P1o4/giphy.gif"
+          />
+        </div>
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-primary" id="talk-smack">Talk Smack</button>
+          <button class="btn btn-warning" id="pizzarat-fight">Fight</button>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>

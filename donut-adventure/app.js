@@ -19,15 +19,37 @@ class Hero {
     alert(randomlySelect(this.catchPhrases));
   }
 
+  checkWin(enemy) {
+    if (enemy.health <= 0) {
+      alert(`${this.name} won`);
+    }
+    if (this.health <= 0) {
+      alert(`${enemy.name} won`);
+    }
+  }
+
+  updateHealthBar(enemy) {
+    document.querySelector(
+      `.${enemy.name}-health`,
+    ).style.width = `calc(${enemy.health}%)`;
+    document.querySelector(`#${enemy.name}-health`).innerHTML = enemy.health;
+  }
+
   fight(enemy) {
     const choosenWeapon = randomlySelect(this.weapons);
     enemy.health -= choosenWeapon.damage;
-    alert(enemy.health);
+
+    alert(this.fightPhrase);
+    alert(
+      `${this.name} used ${choosenWeapon.name} that deteriorating ${enemy.name}'s health by ${choosenWeapon.damage}.`,
+    );
+    this.updateHealthBar(enemy);
+    this.checkWin(enemy);
   }
 }
 
 const dougie = new Hero(
-  'Dougie',
+  'dougie',
   [
     {
       name: 'sprinkleSpray',
@@ -43,7 +65,7 @@ const dougie = new Hero(
 );
 
 const pizzaRat = new Hero(
-  'Pizza Rat',
+  'pizzarat',
   [
     {
       name: 'pepperoniStars',
@@ -58,26 +80,6 @@ const pizzaRat = new Hero(
   "i'm gonna flatten you like a slice of pepperoni!",
 );
 
-// console.log(dougie);
-// console.log(pizzaRat);
-
-class Game {
-  constructor(player1, player2) {
-    this.player1 = player1;
-    this.player2 = player2;
-  }
-
-  checkWin() {
-    if (this.player1.health <= 0) {
-      alert('player2 win');
-    }
-    if (this.player2.health <= 0) {
-      alert('player1 win');
-    }
-  }
-}
-
-const newGame = new Game(dougie, pizzaRat);
 document
   .querySelector('#talk-sass')
   .addEventListener('click', () => dougie.talkRandom());
