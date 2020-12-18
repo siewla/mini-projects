@@ -82,7 +82,7 @@ $(() => {
   // Class was hard! Drink all your butter beer! (remove just the butter beer from your list)
   $('ul').children().eq(0).remove();
   /* other solution */
-  $('li').eq(0).remove();
+  //   $('li').eq(0).remove();
 
   // Get a new wand (add the same element back with new text describing your new wand. Be sure to insert it after your pet in the DOM)
   // Make your new wand stand out by adding a color of indigo (or whatever color you like).
@@ -107,4 +107,9 @@ $(() => {
   $pet.addClass('cabbage');
   //   console.log($pet.attr('class'));
   $pet.removeClass('cabbage');
+
+  /* YEAR 7 */
+  $timeTableName.text('Summer 2021');
+  $('ul').prepend($('<li>').text('Butter beer'));
+  $('ul').attr('storage', 'chest');
 });
