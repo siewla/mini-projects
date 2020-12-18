@@ -6,3 +6,7 @@ body {
 .Owl {
   font-family: fantasy;
 }
+
+ul {
+  list-style-type: none;
+}

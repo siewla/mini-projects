@@ -44,4 +44,33 @@ $(() => {
 
   // In your main.css add an attribute of font-family: fantasy;
   // to all elements that have a class that matches your pet's class
+
+  /* YEAR 3 */
+
+  // Following what you did in previous years,
+  //add the following into an unordered list
+  //(with the attribute of storage and a value of trunk):
+
+  // list items of
+  // butter beer
+  // invisibility cloak (add a class of secret)
+  // magic map (add a class of secret)
+  // time turner (add a class of secret)
+  // leash (for your pet, be sure to give this list element the same class as you gave your pet)
+  // Bertie Bott's Every Flavor [Jelly] Beans.
+  // append the unordered list to your container div
+  $('#container').append(
+    $('<ul>')
+      .attr('storage', 'trunk')
+      .append([
+        $('<li>').text('butter beer'),
+        $('<li>').addClass('secret').text('invisibility cloak'),
+        $('<li>').addClass('secret').text('magic map'),
+        $('<li>').addClass('secret').text('time turner'),
+        $('<li>').addClass('owl').text('leash'),
+        $('<li>').text("Bertie Bott's Every Flavor [Jelly] Beans"),
+      ]),
+  );
+  // In your main.css file, give the items with a class of secret an attribute of opacity: 0.5;
+  // In your main.css file, remove the bullet points from the list items
 });
