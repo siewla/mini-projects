@@ -3,7 +3,7 @@ body {
   color: white;
 }
 
-.Owl {
+.owl {
   font-family: fantasy;
 }
 
@@ -11,6 +11,7 @@ ul {
   list-style-type: none;
 }
 
+table,
 th,
 td {
   border: 1px solid gray;
@@ -18,4 +19,8 @@ td {
 
 table {
   margin: 0 auto;
+}
+
+.cabbage {
+  color: CHARTREUSE;
 }

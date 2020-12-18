@@ -35,7 +35,7 @@ $(() => {
   /* YEAR 2 */
   const $name = createElementWithText('h2', 'Siew La');
   const $house = createElementWithText('h3', houses[1]);
-  const $pet = createElementWithText('h4', 'Hedwig').addClass('Owl');
+  const $pet = createElementWithText('h4', 'Hedwig').addClass('owl');
   const $wand = createElementWithText('h4', 'Elder Wand');
   $container.append($name, $house, $pet, $wand);
 
@@ -72,7 +72,7 @@ $(() => {
   }
   $container.append($timeTableName, $createTimeTable);
 
-  /* YEAR 4 */
+  /* YEAR 5 */
   // Break your wand! (select the element that contains your wand and remove it)
   $('h4').eq(1).remove();
 
@@ -99,4 +99,12 @@ $(() => {
   // (remove your pet from the DOM, put it back in its original location)
   $pet.remove();
   $house.after($pet);
+
+  /* YEAR 6 */
+  $('.secret').delay(2000).hide('slow');
+  $('.secret').delay(2000).show('slow');
+
+  $pet.addClass('cabbage');
+  //   console.log($pet.attr('class'));
+  $pet.removeClass('cabbage');
 });
