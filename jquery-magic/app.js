@@ -71,4 +71,32 @@ $(() => {
     $createTimeTable.append($tableRow);
   }
   $container.append($timeTableName, $createTimeTable);
+
+  /* YEAR 4 */
+  // Break your wand! (select the element that contains your wand and remove it)
+  $('h4').eq(1).remove();
+
+  /* other solution */
+  // $wand.remove();
+
+  // Class was hard! Drink all your butter beer! (remove just the butter beer from your list)
+  $('ul').children().eq(0).remove();
+  /* other solution */
+  $('li').eq(0).remove();
+
+  // Get a new wand (add the same element back with new text describing your new wand. Be sure to insert it after your pet in the DOM)
+  // Make your new wand stand out by adding a color of indigo (or whatever color you like).
+  // But do it with magic (jQuery): Don't add this css in your main.css file
+  $wand.text('New Wand').css('color', 'green');
+  $pet.after($wand);
+  // Send your pet on a spy mission (remove your pet from the DOM,
+  // put it somewhere else in your HTML).
+  // Make sure your pet's leash stays in your trunk
+  // (list item with the same class as your pet inside unordered list)
+  $pet.remove();
+  $('ul').append($pet);
+  // Have your pet come back
+  // (remove your pet from the DOM, put it back in its original location)
+  $pet.remove();
+  $house.after($pet);
 });
